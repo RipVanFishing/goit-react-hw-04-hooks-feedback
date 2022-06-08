@@ -3,8 +3,12 @@ import './Statistic.css'
 
 
 
-export default function Statistics ({total, good, neutral, bad, positivePercentage}) {
-    return (
+export default function Statistics ({good, neutral, bad}) {
+   
+   
+   let total = good + bad + neutral
+   let positiveFeddback = Math.trunc(good/total*100)
+   return (
        <>
         
         <ul>
@@ -21,7 +25,7 @@ export default function Statistics ({total, good, neutral, bad, positivePercenta
                 <h3>Total: <span>{total}</span> </h3>
             </li>
             <li>
-                <h3>Positive feddback: <span>{positivePercentage}</span> % </h3>
+                <h3>Positive feddback: <span>{positiveFeddback}</span> % </h3>
             </li>
         </ul>
 
